@@ -198,16 +198,46 @@ button {
 }
 
 .btn{
+
+    &-holder{
+        @include media('<=375px'){
+            justify-content: center;
+            flex-direction: column;
+        }
+    }
+
     &-form{
         display: block;
         color: $black;
         background-color: $white;
         border: none;
         font-size: $f-size-base;
-        padding: 15px 20px;
+        padding: 20px 43px;;
         width: 140px;
         text-align: center;
-        margin: 10px;
+        margin: 10px 10px 10px 0;
+        text-transform: uppercase;
+
+        &:hover{
+            font-weight: 700;
+            font-family: $rob_bold;
+            padding: 18px 40px;
+            margin-left: 5px;
+            box-shadow: 0 7px 6px -2px rgba(38,50,56,0.3);
+        }
+
+        @include media('<=520px'){
+           padding: 13px 0;
+
+            &:hover{
+               padding: 10px 5px;
+            }
+        }
+
+        @include media('<=375px'){
+            width: 100%;
+            margin: 10px 0;
+        }
     }
 
     &-creat{
@@ -218,7 +248,25 @@ button {
         color: $white;
         font-size: $f-size-base;
         text-align: center;
-        padding: 16px 20px;
+        padding:  20px 36px;
+
+        &:hover{
+            color: #a7e758;
+        }
+
+        @include media('<=620px'){
+            padding: 20px 10px 20px 20px;
+        }
+
+        @include media('<=520px') {
+            padding: 9px 5px;
+            font-size: 12px;
+        }
+
+        @include media('<=375px'){
+            width: 100%;
+            padding: 5px;
+        }
 
         i{
             position: absolute;
@@ -226,6 +274,14 @@ button {
             transform: translateY(-50%);
             left: 35px;
             color: inherit;
+
+            @include media('<=620px'){
+                left: 10px;
+            }
+
+            @include media('<=375px'){
+                left: 30px;
+            }
         }
     }
 }
@@ -234,11 +290,50 @@ button {
     &-form{
         max-width: 400px;
         margin: 0 auto;
+
         &_popup{
            background-color: $green;
            padding: 90px;
             position: relative;
             z-index: 1;
+
+            @include media('<=520px'){
+                padding: 40px 50px;
+            }
+
+            @include media('<=375px'){
+                padding: 40px 20px;
+            }
+
+            .lost-password{
+                color: $white;
+                font-size: $f-size-h4;
+                line-height: 30px;
+                padding-left: 80px;
+
+                &:hover{
+                    color: #a7e758;
+                }
+
+                @include media('<=768px'){
+                    padding-left: 15px;
+                }
+
+                @include media('<=620px'){
+                    padding-left: 10px;
+                    font-size: 16px;
+                }
+
+                @include media('<=520px') {
+                    font-size: $f-size-base;
+                    line-height: 22px;
+                    padding-left: 5px;
+                }
+
+                @include media('<=375px'){
+                    font-size: 12px;
+                }
+            }
         }
 
         .input-holder{
@@ -274,14 +369,24 @@ button {
         display: block;
         text-transform: uppercase;
         color: $white;
-        font-size: 48px;
+        font-size: $f-size-h1;
+        font-weight: 700;
+        font-family: $rob_bold;
+        line-height: 36px;
         text-align: center;
+        margin-bottom: 42px;
+
+        @include media('<=375px'){
+            margin-bottom: 30px;
+        }
     }
 }
 
 .ui-dialog{
     position: fixed !important;
     outline: none;
+    margin: 0 auto;
+    z-index: 1000;
 
     &:before{
         position: fixed;

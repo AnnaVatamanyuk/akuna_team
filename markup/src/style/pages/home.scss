@@ -28,12 +28,12 @@
   color: $white;
   padding-top: 155px;
 
-  @include media('<=483px'){
+  @include media('<=600px'){
     padding-top: 100px;
   }
 
   @include media('<=405px'){
-    padding-top: 60px;
+    padding-top: 80px;
   }
 
   h1{

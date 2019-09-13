@@ -82,6 +82,9 @@ button {
     border: none;
     cursor: pointer;
 }
+address{
+    font-style: normal;
+}
 
 .row {
     margin: 0 -15px;
@@ -194,6 +197,52 @@ button {
 
     &-fluid{
         max-width: 100%;
+    }
+}
+
+.breadcrumbs{
+    &-holder{
+        font-size: $default-font;
+        width: 100%;
+        padding: 40px 15px;
+    }
+
+    &-nav{
+        &_list{
+            margin:  0 -10px;
+
+            li{
+                position: relative;
+                padding: 0 10px;
+
+                a {
+                    color: #b0bec5;
+                }
+
+                a:hover{
+                    color: #78909c;
+                }
+
+                span {
+                    color: $dark-grey;
+                }
+
+                &:last-child{
+                    &:after{
+                        display: none;
+                    }
+                }
+
+                &:after{
+                    position: absolute;
+                    content: '-';
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: -4px;
+                    color: $green;
+                }
+            }
+        }
     }
 }
 

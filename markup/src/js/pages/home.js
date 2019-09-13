@@ -55,6 +55,7 @@ $(function(){
   asideOpen();
   asideClose();
   dialogInit();
+  profileOpen();
 });
 
 function rangeSlider() {
@@ -133,5 +134,13 @@ function dialogInit() {
   });
 }
 
-
+function profileOpen() {
+  $('.js-opener').on('click', function () {
+    if($(this).hasClass('active')){
+      $(this).removeClass('active');
+    } else {
+      $(this).addClass('active');
+    }
+  });
+}
 

@@ -135,25 +135,22 @@ body {
     margin: 0 8px;
     position: relative;
 
-    &:before {
-        @include triangle(18px, #95c85a, up-left);
-
-        position: absolute;
-        content: '';
-        display: block;
-        top: -10px;
-        left: 20px;
-        border-radius: 50%;
-    }
-
-    &:after {
-        position: absolute;
-        color: #fff;
-        display: inline-block;
-        content: '8';
-        top: -7px;
-        left: 26px;
-        font-size: 11px;
+    .cart-count {
+        &:before {
+            @include triangle(18px, #95c85a, up-left);
+    
+            position: absolute;
+            content: '';
+            display: block;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background-color: #95c85a;
+            width: 18px;
+            height: 18px;
+            z-index: -1;
+        }
     }
 }
 
@@ -216,6 +213,7 @@ body {
 
 .top-bar {
     &_profile {
+        width: calc(100% - 35px);
         .profile {
             font-size: 14px;
             font-family: $rob_medium;
@@ -234,5 +232,91 @@ body {
                 color: $green;
             }
         }
+    }
+}
+
+.d-n {
+    display: none;
+}
+
+.header {
+    &-noregistr {
+        .d-nb {
+            display: none;
+        }
+
+        .noregistr-red {
+            display: block;
+        }
+
+        .registr-red {
+            display: none;
+        }
+        .btn-login {
+            display: block;
+        }
+    }
+}
+
+.btn-login {
+    display: none;
+}
+
+.profile{
+    &-info_holder {
+        padding: 0 13px;
+        position: relative;
+        cursor: pointer;
+
+        &.active {
+            .profile-list_holder {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+
+    &-list{
+        padding: 10px 10px 20px;
+
+        &_holder{
+            @include animate(opacity visibility);
+
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 100%;
+            background-color: $white;
+            z-index: 10;
+            opacity: 0;
+            visibility: visible;
+        }
+
+        li{
+            position: relative;
+
+            &:before{
+                position: absolute;
+                content: '\f107';
+                top: 10px;
+                left: 5px;
+                color: $green;
+                display: inline-block;
+                -webkit-font-smoothing: antialiased;
+                font-style: normal;
+                font-variant: normal;
+                text-rendering: auto;
+                line-height: 1;
+                font-family: "Font Awesome 5 Free", sans-serif;
+                font-weight: 900;
+                transform: rotate(-90deg);
+            }
+
+            a{
+                display: block;
+                padding: 10px 20px;
+            }
+        }
+
     }
 }

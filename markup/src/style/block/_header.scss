@@ -1,16 +1,11 @@
 @import "../global.scss";
 @import "../settings/_index.scss";
 
-body {
-    margin: 0 8px;
-}
-
 .header-flex {
     height: 1.7%;
 }
 
 .btn-default {
-    font-size: $f-size-base;
     line-height: $line-height-base;
     border-radius: 3px;
     width: 70px;
@@ -27,15 +22,16 @@ body {
         font-size: 12px;
     }
 
-    @include media('<=500px'){
+    @include media('<=400px'){
         font-size: 10px;
+        height: 20px;
+        width: 55px;
     }
 }
 
 .btn-header1 {
     color: $white;
     background-color: $btn-green-bg;
-    font-family: $rob_regular;
 
     &:hover {
         background-color: $btn-green-bg-hover;
@@ -45,7 +41,6 @@ body {
 .btn-header2 {
     color: $white;
     background-color: $btn-red-bg;
-    font-family: $rob_regular;
 
     &:hover {
         background-color: $btn-red-bg-hover;
@@ -68,9 +63,11 @@ body {
         font-size: 12px;
     }
 
-    @include media('<=530px'){
-        margin: 0 5px;
+    @include media('<=400px'){
+        width: 20px;
+        height: 20px;
         font-size: 10px;
+        margin: 0 5px;
     }
 }
 
@@ -96,7 +93,7 @@ body {
 
     &:after {
         position: absolute;
-        color: #fff;
+        color: $white;
         display: inline-block;
         content: '8';
         top: -7px;
@@ -122,7 +119,7 @@ body {
 
     &:after {
         position: absolute;
-        color: #fff;
+        color: $white;
         display: inline-block;
         content: '5';
         top: -7px;
@@ -135,30 +132,31 @@ body {
     margin: 0 8px;
     position: relative;
 
-    .cart-count {
-        &:before {
-            @include triangle(18px, #95c85a, up-left);
-    
-            position: absolute;
-            content: '';
-            display: block;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            background-color: #95c85a;
-            width: 18px;
-            height: 18px;
-            z-index: -1;
-        }
+    &:before {
+        @include triangle(18px, #95c85a, up-left);
+
+        position: absolute;
+        content: '';
+        display: block;
+        top: -10px;
+        left: 20px;
+        border-radius: 50%;
+    }
+
+    &:after {
+        position: absolute;
+        color: $white;
+        display: inline-block;
+        content: '8';
+        top: -7px;
+        left: 26px;
+        font-size: 11px;
     }
 }
 
 .help {
-    font-size: $f-size-base;
     line-height: $line-height-base;
     margin: 0 26px;
-    font-family: $rob_regular;
     color: #546e7a;
 
     @include media('<=900px'){
@@ -174,9 +172,24 @@ body {
         font-size: 9px;
     }
 
-    @include media('<=530px'){
+    @include media('<=600px'){
+        position: absolute;
+        top: 50px;
         font-size: 8px;
-        padding-left: 93px;
+        right: 15px;
+    }
+
+    @include media('<=360px'){
+        font-size: 6px;
+        top: 47px;
+    }
+
+    @include media('<=335px'){
+        top: 45px;
+    }
+
+    @include media('<=325px'){
+        top: 40px;
     }
 
     &-a {
@@ -188,25 +201,136 @@ body {
     }
 }
 
-.nav {
-    background-color: $nav-color2;
-    //padding: 0 19.3%;
-    margin: 0 auto;
-    height: 60px;
+.menu{
+    background-color: $dark-grey;
 
-    li {
-        color: $white;
-        margin: 0 20px;
-        font-size: $f-size-base;
-        line-height: $line-height-base;
-        font-family: $rob_regular;
+    @include media('<=660px'){
+        display: flex;
+        justify-content: flex-end;
+    }
 
-        @include media('<=900px'){
-            margin: 0 10px;
+    .nav {
+        margin: 0 auto;
+        height: 60px;
+
+        @include media('<=660px'){
+
+            position: absolute;
+            top: 64px;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background-color: $dark-grey;
+
+            padding: 15px 0;
+            visibility: hidden;
+            transition: .3s all ease-in-out;
+            flex-direction: column;
+            height: min-content;
         }
 
-        &:hover {
-            color: $nav-color-hover;
+        li {
+            color: $white;
+            margin: 0 20px;
+            font-size: $f-size-base;
+            line-height: $line-height-base;
+
+            @include media('<=900px'){
+                margin: 0 10px;
+            }
+
+            @include  media('<=660px'){
+                 padding: 0 15px 15px;
+                 text-align: center;
+                 font-size: 16px;
+            }
+
+            &:hover {
+                color: $nav-color-hover;
+            }
+        }
+
+        &-opener{
+            display: none;
+
+            @include media('<=660px'){
+                display: flex;
+                justify-content: flex-end;
+                position: relative;
+                background-color: transparent;
+                border: none;
+                width: 30px;
+                height: 30px;
+                cursor: pointer;
+                z-index: 100;
+
+                &:before{
+                    transition: .3s all ease-in-out;
+                    position: absolute;
+                    content: '';
+                    display: block;
+                    top: 5px;
+                    left: -50%;
+                    transform: translateX(-50);
+                    width: 30px;
+                    height: 2px;
+                    background-color: $white;
+                }
+
+                &:after{
+                    transition: .3s all ease-in-out;
+                    position: absolute;
+                    content: '';
+                    display: block;
+                    bottom: 5px;
+                    left: -50%;
+                    transform: translateX(-50);
+                    width: 30px;
+                    height: 2px;
+                    background-color: #fff;
+                }
+
+                span{
+                    transition: .3s all ease-in-out;
+                    position: absolute;
+                    display: block;
+                    top: 50%;
+                    left: 0;
+                    transform: translate(-50%, -50%);
+                    width: 30px;
+                    height: 2px;
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+}
+
+.active{
+
+    @include media('<=660px'){
+
+        .nav{
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .nav-opener{
+
+            &:before{
+                top: 50%;
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+
+            &:after{
+                top: 50%;
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+
+            span{
+                opacity: 0;
+                visibility: hidden;
+            }
         }
     }
 }

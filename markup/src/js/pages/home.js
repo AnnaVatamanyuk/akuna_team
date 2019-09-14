@@ -1,3 +1,13 @@
+function navOpener() {
+  $('.nav-opener').on('click', function () {
+    if($('body').hasClass('active')){
+      $('body').removeClass('active');
+    }else {
+      $('body').addClass('active');
+    }
+  });
+}
+
 $(function () {
   $('#tabs-block_holder').tabs({
     activate: function (event, ui) {
@@ -8,7 +18,6 @@ $(function () {
 });
 
 $(function () {
-  console.log(15845);
   $('.quote-slide .slider .slider-content').slick({
      dots:true,
     slidesToShow: 4,
@@ -41,6 +50,7 @@ $(function () {
  });
 
 $(function(){
+  navOpener();
   rangeSlider();
   asideOpen();
   asideClose();
@@ -48,7 +58,6 @@ $(function(){
 });
 
 function rangeSlider() {
-
   if ($('#price-range').length) {
     $('#price-range').ionRangeSlider({
       type: 'double',
@@ -64,7 +73,6 @@ function rangeSlider() {
 }
 
 function asideOpen() {
-  console.log(15845);
   $('.aside-opener').on('click', function(){
     if($('body').hasClass('active-aside')){
       $('body').removeClass('active-aside');
@@ -72,10 +80,22 @@ function asideOpen() {
       $('body').addClass('active-aside');
     }
   });
+
+  if ($('#price-range-row').length) {
+    $('#price-range-row').ionRangeSlider({
+      type: 'double',
+      grid: false,
+      min: 0,
+      max: 1000,
+      from: 0,
+      to: 600,
+      prefix: "$",
+      hide_min_max: true
+    });
+  }
 }
 
 function asideClose() {
-  console.log(15845);
 $('.aside-close').on('click', function(){
   if($('body').hasClass('active-aside')){
     $('body').removeClass('active-aside');
@@ -86,8 +106,41 @@ $('.aside-close').on('click', function(){
 }
 
 function dialogInit() {
+
+  var setFormSize = function () {
+    if ($(window).width() <= 768 && $(window).width() > 620) {
+      return 600;
+    }
+    else if ($(window).width() <= 620 && $(window).width() > 520) {
+      console.log($(window).width());
+      return 500;
+    }
+    else if ($(window).width() <= 520 && $(window).width() > 375) {
+      console.log($(window).width());
+      return 350;
+    }
+    else if ($(window).width() <= 375) {
+      console.log($(window).width());
+      return 250;
+    }
+    else {
+      return 730;
+    }
+  };
+
+  function profileOpen () {
+    $('.js-opener').on('click', function(){
+      if($(this).hasClass('active')){
+        $('.js-opener').removeClass('active');
+    } else {
+        $('.js-opener').removeClass('active');
+        $(this).addClass('active');
+    }
+    })
+  }
+
   $( "#dialog" ).dialog({
-    width:730,
+    width:setFormSize(),
     autoOpen: false,
     show: {
       effect: "fade",

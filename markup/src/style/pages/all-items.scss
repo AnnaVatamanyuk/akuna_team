@@ -3,6 +3,12 @@
 @import "../block/_header.scss";
 @import "../block/_footer.scss";
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .breadcrumbs{
   &-holder{
     width: 100%;
@@ -311,5 +317,117 @@
 .all-items {
   &_section {
     padding-top: 0;
+  }
+}
+
+
+
+.product-rows_block,
+.product-list_block {
+  width: 100%;
+}
+
+.selects {
+  &-holder {
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #d3d3d3;
+  }
+}
+
+.select {
+  &-block {
+    position: relative;
+
+    .js-opener {
+      &.active ~ .dropdown-holder {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  &-opener {
+    background-color: transparent;
+    border: none;
+    padding: 20px 60px 20px 30px;
+    border-right: 1px solid #d3d3d3;
+  }
+
+  &-list {
+    padding: 10px;
+    width: 286px;
+
+    a {
+      padding: 10px 20px 10px 25px;
+    }
+  }
+}
+
+.dropdown_holder {
+  @include animate(opacity visibility);
+
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #d3d3d3;
+  min-width: 100%;
+  padding: 15px;
+
+  .range-slider-wrap {
+    width: 286px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+
+.sort {
+  &-title {
+    display: block;
+    margin-right: 5px;
+  }
+
+  &-select {
+    border: none;
+    outline: none;
+  }
+}
+
+.select-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  width: 20px;
+  height: 17px;
+  background-color: #fff;
+}
+
+.change-btn {
+  &_list {
+    padding: 5px 20px;
+
+    li {
+      padding: 7px;
+
+      &.active-product-block {
+        a {
+          color: $green;
+        }
+      }
+
+      a {
+        @include animate(opacity);
+        color: #90a4ae;
+
+        &:hover {
+          opacity: .7;
+
+        }
+      }
+    }
   }
 }

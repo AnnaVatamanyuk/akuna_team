@@ -18,7 +18,7 @@ $(function () {
 });
 
 $(function () {
-  $('.quote-slide .slider .slider-content').slick({
+  $('.quote-slide .slider .slider-content').click({
      dots:true,
     slidesToShow: 4,
     slidesToScroll: 4,

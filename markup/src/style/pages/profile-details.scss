@@ -1,22 +1,29 @@
 @import "../global.scss";
 @import "../settings/_index.scss";
-@import "../block/_index.scss";
+@import "../block/_banner.scss";
+@import "../block/_product.scss";
+@import "../block/_header.scss";
+@import "../block/_footer.scss";
 
 
-
+.visual-section{
+  padding: 80px 0 95px;
+  h1{
+    display: none;
+  }
+}
 
 .products {
   &-name_info {
     color: #707070;
   }
 
-
   &-details {
     border: 1px solid #dcdcdc;
-    margin-bottom: 30px;    
+    margin-bottom: 30px;
   }
   &-banner {
-    padding: 20px 
+    padding: 20px
   }
 
   &-name_about {
@@ -65,7 +72,7 @@
 
   }
   &-skill {
-    padding-bottom: 14px; 
+    padding-bottom: 14px;
     padding-top: 23px;
     font-style: italic;
     font-size: 16px;

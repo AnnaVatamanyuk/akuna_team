@@ -1,55 +1,19 @@
 @import "../settings/_index.scss";
 @import "../block/_header.scss";
 @import "../block/_footer.scss";
+@import "../block/_banner.scss";
 @import "../global.scss";
-@import "../settings/_include-media";
 
+.visual-section{
+    padding: 80px 0 95px;
+    h1{
+        display: none;
+    }
+}
 
 .upload-item {
     background-color: #f4f6f5;
 }
-
-.breadcrumbs{
-    &-holder{
-      width: 100%;
-      padding: 0 15px;
-      margin: 40px 0;
-    }
-  
-    &-nav{
-      &_list{
-        margin:  0 -10px;
-  
-        li{
-          position: relative;
-          padding: 0 10px;
-
-          a {
-              color: #bec9cf;
-          }
-
-          span {
-              color: #263238;
-          }
-  
-          &:last-child{
-            &:after{
-              display: none;
-            }
-          }
-  
-          &:after{
-            position: absolute;
-            content: '-';
-            top: 50%;
-            transform: translateY(-50%);
-            right: -4px;
-            color: $green;
-          }
-        }
-      }
-    }
-  }
 
 label:not(.content-none) {
 
@@ -71,7 +35,7 @@ label:not(.content-none) {
 
     @include media('<425px') {
         width: 220px;
-        
+
     }
 
 }
@@ -119,7 +83,7 @@ label:not(.content-none) {
     flex-grow: 1;
 
     font-size: 15px;
-    
+
     & + & {
       margin-top: 24px;
     }
@@ -162,14 +126,14 @@ input, textarea {
     border: 1px solid #dcdcdc;
     height: 38px;
     flex-grow: 1;
-    padding-left: 18px;  
+    padding-left: 18px;
 
-    
+
 }
 
 
-textarea { 
-    resize: none; 
+textarea {
+    resize: none;
 }
 
 .field-label_text_icon i {
@@ -190,7 +154,7 @@ textarea {
 	overflow: hidden;
 	position: absolute;
     z-index: -1;
-   
+
 }
 
 .inputfile + label {
@@ -214,6 +178,6 @@ textarea {
             font-size: 12px;
             color: #707070;
         }
-  
+
 }
 

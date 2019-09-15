@@ -1,5 +1,15 @@
 @import "../global.scss";
 @import "../settings/_index.scss";
+@import "../block/_header.scss";
+@import "../block/_footer.scss";
+@import "../block/_banner.scss";
+
+.visual-section{
+  padding: 80px 0 95px;
+  h1{
+    display: none;
+  }
+}
 
 .contact{
   &-section{
@@ -25,6 +35,13 @@
     }
   }
 
+  &-map{
+    background-color: $background-grey;
+    height: 414px;
+    width: 100%;
+    margin-bottom: 60px;
+  }
+
   &-content{
     padding: 0 40px;
 
@@ -33,7 +50,9 @@
         i{
           color: $green;
           position: absolute;
-          font-size: $f-size-h3;
+          left: 0;
+          font-size: 20px;
+          line-height: 24px;
           font-family: "Font Awesome 5 Free", sans-serif;
         }
 
@@ -44,8 +63,12 @@
          }
 
         .contact-title{
+          position: relative;
+
           h3{
+            padding-left: 40px;
             font-size: 20px;
+            margin-bottom: 10px;
           }
         }
 
@@ -61,6 +84,7 @@
                 height: 43px;
                 width: 100%;
                 max-width: 350px;
+                padding-left: 15px;
               }
             }
           }
@@ -74,11 +98,14 @@
           .input-form{
             color: #7a7a7a;
             background-color: #f1f4f5;
+            border: none;
+            outline: none;
           }
 
           .input-form:focus{
             background-color: $white;
             color: white;
+            border: 1px solid #f1f4f5;
           }
 
           .btn-form{
@@ -95,10 +122,21 @@
     }
   }
 
-  &-map{
-    background-color: $background-grey;
-    height: 414px;
-    width: 100%;
-    margin-bottom: 60px;
+  &-line{
+    height: 4px;
+    background-color: $green;
+    width: 44px;
+    margin-bottom: 10px;
+    margin-left: 40px;
   }
+
+  &-text{
+    font-size: $default-font;
+    color: #707070;
+    line-height: 24px;
+    padding-left: 40px;
+    margin-bottom: 15px;
+  }
+
+
 }

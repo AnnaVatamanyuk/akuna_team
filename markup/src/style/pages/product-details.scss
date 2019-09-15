@@ -2,6 +2,15 @@
 @import "../settings/_index.scss";
 @import "../block/_header.scss";
 @import "../block/_footer.scss";
+@import "../block/_banner.scss";
+@import "../block/_product.scss";
+
+.visual-section{
+  padding: 80px 0 95px;
+  h1{
+    display: none;
+  }
+}
 
 %list-reset{
   list-style: none;
@@ -13,71 +22,71 @@
 
 .product-details_section {
     background-color: #f4f6f5;
-  
+
     .products-holder {
       padding: 0 15px;
       width: calc(100% - 300px);
     }
-  
+
     .img-holder1 {
       background-color: #fff;
       width: 829px;
       height: 440px;
       margin-bottom: 40px;
       padding: 20px;
-  
+
       .img {
         background-color: #d4d4d4;
         overflow: hidden;
         height: 400px;
       }
     }
-  
+
     .text-holder{
-  
+
       h2 {
         font-size: $f-size-h2;
         margin-bottom: 25px;
       }
-  
+
       .product-description {
         font-size: 16px;
         line-height: 24px;
         color: #707070;
         margin-bottom: 45px;
       }
-  
+
       .btn {
         height: 50px;
         color: $light-grey;
         margin: 0 9px;
-  
+
       &-red {
         width: 138px;
         height: 50px;
         background-color: $red;
       }
-  
+
       &-marengo {
         width: 158px;
         height: 50px;
         background-color: $marengo;
       }
-  
+
       &-green {
         width: 158px;
         height: 50px;
         background-color: $green;
       }
-    } 
+    }
   }
-  
+
   .product-tab {
     @extend %list-reset;
     height: 60px;
     line-height: 60px;
     text-align: center;
-  
+
     li {
       width: calc(100%/4);
       color: #70838d;
@@ -157,7 +166,7 @@
       height: 20px;
       outline: none;
       cursor: pointer;
-      
+
       @include media('<1024px'){
         display: block;
       }
@@ -212,19 +221,19 @@
         color: #fff;
       }
     }
-  
+
     .facebook {
       background-color: #6370b6;
     }
-  
+
     .twitter {
       background-color: #64b5f6;
     }
-  
+
     .linkedin {
       background-color: #4f71ce;
     }
-  
+
     .pinterest {
       background-color: #d32f2f;
     }

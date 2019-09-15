@@ -1,0 +1,39 @@
+@import "../global";
+@import "../settings/_index.scss";
+
+.list-pages{
+  .container{
+    max-width: 1016px;
+    border: 2px solid $dark-grey;
+    margin-top: 100px;
+    padding: 0;
+
+
+
+    .student{
+      &-page{
+        border-right: 2px solid $dark-grey;
+      }
+
+      &-name{
+        border-bottom: 2px solid $dark-grey;
+        background-color: $green;
+
+        h2{
+          font-size: 20px;
+          margin-bottom: 15px;
+          padding: 15px 15px 0 15px;
+        }
+      }
+
+      &-list{
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 30px;
+        padding: 15px;
+        position: relative;
+
+      }
+    }
+  }
+}

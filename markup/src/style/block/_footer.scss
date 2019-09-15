@@ -171,7 +171,6 @@
     }
 
     address{
-      font-style: normal;
 
       @include media('<=540px'){
         line-height: 15px;

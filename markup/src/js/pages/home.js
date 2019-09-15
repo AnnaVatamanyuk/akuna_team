@@ -17,6 +17,7 @@ $(function () {
   });
 });
 
+<<<<<<< HEAD
 $(function () {
   $('.quote-slide .slider .slider-content').click({
      dots:true,
@@ -49,17 +50,33 @@ $(function () {
    });
  });
 
+=======
+>>>>>>> e0ee894c254c8a233741032ecdfd40b3087e50fc
 $(function(){
   navOpener();
   rangeSlider();
   asideOpen();
   asideClose();
   dialogInit();
+  profileOpen();
 });
 
 function rangeSlider() {
   if ($('#price-range').length) {
     $('#price-range').ionRangeSlider({
+      type: 'double',
+      grid: false,
+      min: 0,
+      max: 1000,
+      from: 0,
+      to: 600,
+      prefix: "$",
+      hide_min_max: true
+    });
+  }
+
+  if ($('#price-range-row').length) {
+    $('#price-range-row  ').ionRangeSlider({
       type: 'double',
       grid: false,
       min: 0,
@@ -157,5 +174,15 @@ function dialogInit() {
   });
 }
 
+function profileOpen () {
+  $('.js-opener').on('click', function(){
+    if($(this).hasClass('active')){
+      $('.js-opener').removeClass('active');
+    } else {
+      $('.js-opener').removeClass('active');
+      $(this).addClass('active');
+    }
+  })
+}
 
 

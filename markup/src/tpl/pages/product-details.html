@@ -1,8 +1,16 @@
 //= ../pages-head/home-head.html
-<body>
+    <link rel="stylesheet" href="../../style/pages/product-details.min.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="../../js/pages/slick.min.js"></script>
+    <script src="../../js/pages/slider.min.js"></script>
+    <script src="../../js/pages/home.min.js"></script>
+</head>
+    <body>
     <div class="wrapper">
         //= ../block/header.html
         <main class="main">
+            //= ../block/banner.html
             <section class="product-details_section">
                 <div class="container">
                     <div class="row d-f fw-w">
@@ -15,7 +23,7 @@
                         <aside class="products-holder">
                             <div class="img-holder1">
                                 <div class="img">
-    
+
                                 </div>
                             </div>
                             <div class="text-holder">
@@ -59,7 +67,7 @@
                                         <div class="tab-text">
                                             <ul class="row d-f fw-w jc-fs">
                                                 <div class="col col-3+">
-                                                    <li"><i class="fa fa-angle-right" aria-hidden="true"></i>Printing and typesetting industry</li>
+                                                    <li><i class="fa fa-angle-right" aria-hidden="true"></i>Printing and typesetting industry</li>
                                                     <li><i class="fa fa-angle-right" aria-hidden="true"></i>Bhen an unknown printe</li>
                                                     <li><i class="fa fa-angle-right" aria-hidden="true"></i>Handard dummy text</li>
                                                     <li><i class="fa fa-angle-right" aria-hidden="true"></i>Desktop publishing software</li>
@@ -77,7 +85,7 @@
                                         <div class="tab-text">
                                             <ul class="row d-f fw-w jc-fs">
                                                 <div class="col col-3+">
-                                                    <li"><i class="fa fa-angle-right" aria-hidden="true"></i>Printing and typesetting industry</li>
+                                                    <li><i class="fa fa-angle-right" aria-hidden="true"></i>Printing and typesetting industry</li>
                                                     <li><i class="fa fa-angle-right" aria-hidden="true"></i>Handard dummy text</li>
                                                     <li><i class="fa fa-angle-right" aria-hidden="true"></i>Desktop publishing software</li>
                                                     <li><i class="fa fa-angle-right" aria-hidden="true"></i>Bhen an unknown printe</li>
@@ -94,7 +102,7 @@
                                         <div class="tab-text">
                                             <ul class="row d-f fw-w jc-fs">
                                                 <div class="col col-3+">
-                                                    <li"><i class="fa fa-angle-right" aria-hidden="true"></i>Printing and typesetting industry</li>
+                                                    <li><i class="fa fa-angle-right" aria-hidden="true"></i>Printing and typesetting industry</li>
                                                     <li><i class="fa fa-angle-right" aria-hidden="true"></i>Bhen an unknown printe</li>
                                                     <li><i class="fa fa-angle-right" aria-hidden="true"></i>Handard dummy text</li>
                                                     <li><i class="fa fa-angle-right" aria-hidden="true"></i>Desktop publishing software</li>
@@ -112,7 +120,7 @@
                                         <div class="tab-text">
                                             <ul class="row d-f fw-w jc-fs">
                                                 <div class="col col-3+">
-                                                    <li"><i class="fa fa-angle-right" aria-hidden="true"></i>Printing and typesetting industry</li>
+                                                    <li><i class="fa fa-angle-right" aria-hidden="true"></i>Printing and typesetting industry</li>
                                                     <li><i class="fa fa-angle-right" aria-hidden="true"></i>Bhen an unknown printe</li>
                                                     <li><i class="fa fa-angle-right" aria-hidden="true"></i>Handard dummy text</li>
                                                     <li><i class="fa fa-angle-right" aria-hidden="true"></i>Desktop publishing software</li>
@@ -137,21 +145,7 @@
                                         <div class="col col-3">
                                             <div class="tab-col d-f fd-r">
                                                 <div class="img-holder">
-            
-                                                </div>
-                                                <div class="product-description d-f jc-sb fw-w ai-c">
-                                                    <div class="text-holder d-f fd-c">
-                                                        <span class="product-name">The Post Grid Pro</span>
-                                                        <span class="product-category">WordPress Plugin</span>
-                                                        <span class="product-price">$19</span>  
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col col-3">
-                                            <div class="tab-col d-f fd-r">
-                                                <div class="img-holder">
-            
+
                                                 </div>
                                                 <div class="product-description d-f jc-sb fw-w ai-c">
                                                     <div class="text-holder d-f fd-c">
@@ -165,7 +159,7 @@
                                         <div class="col col-3">
                                             <div class="tab-col d-f fd-r">
                                                 <div class="img-holder">
-            
+
                                                 </div>
                                                 <div class="product-description d-f jc-sb fw-w ai-c">
                                                     <div class="text-holder d-f fd-c">
@@ -179,7 +173,7 @@
                                         <div class="col col-3">
                                             <div class="tab-col d-f fd-r">
                                                 <div class="img-holder">
-            
+
                                                 </div>
                                                 <div class="product-description d-f jc-sb fw-w ai-c">
                                                     <div class="text-holder d-f fd-c">
@@ -193,7 +187,7 @@
                                         <div class="col col-3">
                                             <div class="tab-col d-f fd-r">
                                                 <div class="img-holder">
-            
+
                                                 </div>
                                                 <div class="product-description d-f jc-sb fw-w ai-c">
                                                     <div class="text-holder d-f fd-c">
@@ -207,7 +201,21 @@
                                         <div class="col col-3">
                                             <div class="tab-col d-f fd-r">
                                                 <div class="img-holder">
-            
+
+                                                </div>
+                                                <div class="product-description d-f jc-sb fw-w ai-c">
+                                                    <div class="text-holder d-f fd-c">
+                                                        <span class="product-name">The Post Grid Pro</span>
+                                                        <span class="product-category">WordPress Plugin</span>
+                                                        <span class="product-price">$19</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col col-3">
+                                            <div class="tab-col d-f fd-r">
+                                                <div class="img-holder">
+
                                                 </div>
                                                 <div class="product-description d-f jc-sb fw-w ai-c">
                                                     <div class="text-holder d-f fd-c">
@@ -308,7 +316,6 @@
         </main>
         //= ../block/footer.html
     </div>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="../../js/pages/home.min.js"></script>
 </body>
+</html>

@@ -18,9 +18,15 @@ $(function () {
 });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 $(function () {
   $('.quote-slide .slider .slider-content').click({
      dots:true,
+=======
+$(function () {
+  $('.quote-slide .slider .slider-content').slick({
+    dots:true,
+>>>>>>> f17f8f176797a9a21604a31ebc197ce6f642d70b
     slidesToShow: 4,
     slidesToScroll: 4,
     rows: 1,
@@ -47,11 +53,17 @@ $(function () {
         }
       }
     ]
+<<<<<<< HEAD
    });
  });
 
 =======
 >>>>>>> e0ee894c254c8a233741032ecdfd40b3087e50fc
+=======
+  });
+});
+
+>>>>>>> f17f8f176797a9a21604a31ebc197ce6f642d70b
 $(function(){
   navOpener();
   rangeSlider();

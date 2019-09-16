@@ -5,6 +5,27 @@
 @import "../block/_banner.scss";
 @import "../block/_product.scss";
 
+.btn-icon_bell,
+.btn-icon_mail,
+.registr-reg{
+  display: block;
+}
+
+.btn-icon_cart{
+  .cart-count{
+    display: block;
+  }
+}
+
+.profile-info_holder{
+  display: flex;
+}
+
+.btn-login,
+.noregistr-reg{
+  display: none;
+}
+
 .visual-section{
   padding: 80px 0 95px;
   h1{

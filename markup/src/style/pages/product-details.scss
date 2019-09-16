@@ -72,6 +72,10 @@ li {
     .products-holder {
       padding: 0 15px;
       width: calc(100% - 300px);
+
+      @include media('<=1024px'){
+      width: 100% !important;
+      }
     }
 
     .img-holder1 {
@@ -81,29 +85,6 @@ li {
       height: 440px;
       margin-bottom: 40px;
       padding: 20px;
-
-      @include media('<=1024px'){
-        margin-bottom: 1095px;
-      }
-
-      @include media('<=768px'){
-        width: 735px;
-      }
-
-      @include media('<=426px'){
-        margin-bottom: 1215px;
-        width: 390px;
-      }
-
-      @include media('<=376px'){
-        margin-bottom: 1230px;
-        width: 340px;
-      }
-
-      @include media('<=321px'){
-        margin-bottom: 1245px;
-        width: 285px;
-      }
   
       .img {
         background-color: #d4d4d4;
@@ -140,26 +121,45 @@ li {
         color: $light-grey;
         margin: 0 9px;
 
-        @include media('<=768px'){
-          margin: 10px 9px;
+        @include media('<=769px'){
+          margin: 10px 5px;
+          width: 100px;
+        }
+
+        @include media('<=321px'){
+          width: 200px !important;
+          align-items: center;
+          justify-content: center;
         }
   
       &-red {
         width: 138px;
         height: 50px;
         background-color: $red;
+
+        @include media('<=769px'){
+          width: 110px;
+        }
       }
 
       &-marengo {
         width: 158px;
         height: 50px;
         background-color: $marengo;
+        
+        @include media('<=769px'){
+          width: 110px;
+        }
       }
 
       &-green {
         width: 158px;
         height: 50px;
         background-color: $green;
+        
+        @include media('<=769px'){
+          width: 110px;
+        }
       }
     }
   }
@@ -202,11 +202,15 @@ li {
     margin-top: 4px;
     color: #707070;
 
+    .col-3 {
+      padding: 40px;
+    }
+
     i {
-        color: $green;
-        padding: 0 15px;
-        font-size: 16px;
-        line-height: 36px;
+      color: $green;
+      padding: 0 15px;
+      font-size: 16px;
+      line-height: 36px;
     }
   }
 }
@@ -234,15 +238,25 @@ li {
 .bottom-bar {
   margin: 0 0 55px -9px;
 
-  @include media('<=768px'){
-    flex-direction: column !important;
-    align-items: flex-start !important;
+  @include media('<=426px'){
     margin: -20px 0 30px;
+    flex-direction: column;
+  }
+
+  .buttons {
+    @include media('<=426px'){
+      display: flex;
+      justify-content: center;
+    }
+
+    @include media('<=321px'){
+      flex-direction: column;
+    }
   }
   
   .social {
     padding-left: 150px;
-    @include media('<=768px'){
+    @include media('<=769px'){
       padding: 0 7.5px;
     }
 
@@ -302,11 +316,11 @@ li {
       height: 90px;
     }
 
-    @include media('<=1024px'){
+    @include media('<=1025px'){
       width: calc(100%/2);
     }
 
-    @include media('<=768px'){
+    @include media('<=426px'){
       width: 100%;
     }
   }
@@ -327,8 +341,25 @@ li {
 }
 
 .aside{
+  @include animate(opacity visibility transform);
+
   padding: 0 15px;
   width: 300px;
+
+  @include media('<1025px') {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #f4f6f5;
+    overflow: hidden;
+    height: 100vh;
+    box-shadow: 0 1px 10px rgba(100, 100, 100, 0.75);
+    z-index: 10;
+    padding: 25px 15px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-100%);
+  }
 
   &-title {
     display: block;
@@ -339,6 +370,8 @@ li {
     h3 {
       font-size: 20px;
       font-family: $rob_bold;
+      display: flex;
+      justify-content: center;
     }
 
     &-price {
@@ -362,10 +395,47 @@ li {
     }
   }
 
+  &-close {
+    display: none;
+    position: absolute;
+    border: 0;
+    background-color: transparent;
+    top: 5px;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    outline: none;
+    cursor: pointer;
+
+    @include media ('<1025px') {
+      display: block;
+    }
+  }
+
+  &-opener {
+    display: none;
+    position: fixed;
+    top: 130px;
+    left: 0;
+    background-color: rgba(245, 243, 243, .25);
+    outline: none;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    box-shadow: 0 1px 10px rgba(100, 100, 100, 0.75);
+    z-index: 9;
+
+    @include media ('<1025px') {
+      display: block;
+    }
+
+  }
+
   .active-aside & {
     transform: translateX(0);
     opacity: 1;
     visibility: visible;
+    overflow: scroll;
   }
 
   &-search {
@@ -414,18 +484,13 @@ li {
     font-size: $f-size-h3;
     margin: 30px 0 25px;
 
-    @include media('<=1024px'){
+    @include media('<=1025px'){
       padding: 0;
     }
 
     .aside-btn {
       padding: 0 10px;
       margin-left: 50px;
-
-      @include media('<=1024px'){
-        position: absolute;
-        right: 45px;
-      }
 
       i {
         color: $green;
@@ -516,54 +581,5 @@ li {
     span {
       color: #70838d;
     }
-  }
-}
-
-
-
-@include media('<=1024px'){
-  .aside2 {
-    position: absolute;
-    top: 1050px;
-    width: calc(100%/2);
-    visibility: visible;
-    opacity: 1;
-    width: 500px;
-
-    .btn {
-      width: 100%;
-    }
-  }
-}
-
-@include media('<=768px'){
-  .aside2 {
-    left: 165px;
-    height: 1085px;
-  }
-}
-
-@include media('<=426px'){
-  .products-holder {
-    width: 100% !important;
-  }
-
-  .aside2 {
-    width: 300px;
-    left: 40px;
-  }
-}
-
-@include media('<=376px'){
-  .aside2 {
-    width: 300px;
-    left: 20px;
-  }
-}
-
-@include media('<=321px'){
-  .aside2 {
-    width: 300px;
-    left: 5px;
   }
 }

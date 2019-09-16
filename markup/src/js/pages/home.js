@@ -17,9 +17,16 @@ $(function () {
   });
 });
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+$(function () {
+  $('.quote-slide .slider .slider-content').click({
+     dots:true,
+=======
 $(function () {
   $('.quote-slide .slider .slider-content').slick({
     dots:true,
+>>>>>>> f17f8f176797a9a21604a31ebc197ce6f642d70b
     slidesToShow: 4,
     slidesToScroll: 4,
     rows: 1,
@@ -46,9 +53,17 @@ $(function () {
         }
       }
     ]
+<<<<<<< HEAD
+   });
+ });
+
+=======
+>>>>>>> e0ee894c254c8a233741032ecdfd40b3087e50fc
+=======
   });
 });
 
+>>>>>>> f17f8f176797a9a21604a31ebc197ce6f642d70b
 $(function(){
   navOpener();
   rangeSlider();
@@ -94,6 +109,19 @@ function asideOpen() {
       $('body').addClass('active-aside');
     }
   });
+
+  if ($('#price-range-row').length) {
+    $('#price-range-row').ionRangeSlider({
+      type: 'double',
+      grid: false,
+      min: 0,
+      max: 1000,
+      from: 0,
+      to: 600,
+      prefix: "$",
+      hide_min_max: true
+    });
+  }
 }
 
 function asideClose() {
@@ -128,6 +156,17 @@ function dialogInit() {
       return 730;
     }
   };
+
+  function profileOpen () {
+    $('.js-opener').on('click', function(){
+      if($(this).hasClass('active')){
+        $('.js-opener').removeClass('active');
+    } else {
+        $('.js-opener').removeClass('active');
+        $(this).addClass('active');
+    }
+    })
+  }
 
   $( "#dialog" ).dialog({
     width:setFormSize(),

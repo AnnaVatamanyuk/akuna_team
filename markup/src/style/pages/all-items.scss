@@ -361,6 +361,8 @@
 .select{
   &-block{
     position: relative;
+    color: #707070;
+
 
     .js-opener{
       &.active ~ .dropdown-holder{
@@ -371,18 +373,57 @@
   }
 
   &-opener{
+    font-size: 16px;
+    font-family: $rob_medium;
     background-color: transparent;
     border: none;
     padding: 20px 60px 20px 30px;
     border-right: 1px solid #d3d3d3;
+
+    @include media('<=650px'){
+      padding: 10px 15px 10px 10px;
+    }
+
+    &:after{
+      position: absolute;
+      top: 21px;
+      right: 35px;
+      color: #707070;
+      display: inline-block;
+      content: "\f107";
+      -webkit-font-smoothing: antialiased;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      line-height: 1;
+      font-family: "Font Awesome 5 Free", sans-serif;
+      font-weight: 600;
+
+      @include media('<=650px'){
+        top: 13px;
+        right: 3px;
+      }
+    }
   }
 
-  &-list{
+  &-list {
     padding: 10px;
     width: 286px;
 
-    a{
+    a {
+      font-weight: 600;
       padding: 10px 20px 10px 25px;
+      color: $dark-grey;
+      font-size: $default-font;
+
+      &:hover{
+        opacity: .7;
+      }
+    }
+
+    .product-count {
+        color: #90a4ae;
+        font-weight: 500;
     }
   }
 }
@@ -409,14 +450,46 @@
 
 .sort{
   &-title {
+    padding-left: 30px;
     display: block;
     margin-right: 5px;
-  }
 
-  &-select{
-    border: none;
-    outline: none;
+    &:before{
+      content: '\f160';
+      position: absolute;
+      top: 22px;
+      left: 10px;
+      font-weight: 600;
+      font-size: 15px;
+      font-family: "Font Awesome 5 Free", sans-serif;
+      color: $dark-grey;
+
+      @include media('<=650px'){
+        top: 13px;
+      }
+    }
+
+    &:after{
+      background-color: #fff;
+      content: '\f0dc';
+      position: absolute;
+      top: 20px;
+      right: 5px;
+      font-weight: 600;
+      font-size: 18px;
+      font-family: "Font Awesome 5 Free", sans-serif;
+
+      @include media('<=650px'){
+        top: 13px;
+      }
+    }
   }
+}
+
+#sort-select{
+  color: #707070;
+  border: none;
+  outline: none;
 }
 
 .select-icon{
@@ -432,6 +505,11 @@
 .change-btn{
   &_list{
     padding: 5px 20px;
+
+    @include media('<=520px'){
+      padding: 5px 10px;
+    }
+
     li {
       padding: 7px;
 

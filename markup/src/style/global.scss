@@ -161,6 +161,10 @@ address{
     justify-content: space-between;
 }
 
+.jc-sa{
+    justify-content: space-around;
+}
+
 .jc-fs{
     justify-content: flex-start;
 }
@@ -183,6 +187,10 @@ address{
 
 .ai-b {
     align-items: baseline;
+}
+
+.pos-r {
+    position: relative;
 }
 
 .text-center{

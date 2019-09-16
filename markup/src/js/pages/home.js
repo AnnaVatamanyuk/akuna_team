@@ -97,13 +97,13 @@ function asideOpen() {
 }
 
 function asideClose() {
-$('.aside-close').on('click', function(){
-  if($('body').hasClass('active-aside')){
-    $('body').removeClass('active-aside');
-  } else {
-    $('body').addClass('active-aside');
-  }
-});
+  $('.aside-close').on('click', function(){
+    if($('body').hasClass('active-aside')){
+      $('body').removeClass('active-aside');
+    } else {
+      $('body').addClass('active-aside');
+    }
+  });
 }
 
 function dialogInit() {
@@ -157,5 +157,3 @@ function profileOpen () {
     }
   })
 }
-
-

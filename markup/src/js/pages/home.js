@@ -8,6 +8,16 @@ function navOpener() {
   });
 }
 
+function topBarOpener() {
+  $('.top-bar-opener').on('click', function () {
+    if($('body').hasClass('active-top-bar')){
+      $('body').removeClass('active-top-bar');
+    }else {
+      $('body').addClass('active-top-bar');
+    }
+  });
+}
+
 $(function () {
   $('#tabs-block_holder').tabs({
     activate: function (event, ui) {
@@ -56,6 +66,7 @@ $(function(){
   asideClose();
   dialogInit();
   profileOpen();
+  topBarOpener();
 });
 
 function rangeSlider() {

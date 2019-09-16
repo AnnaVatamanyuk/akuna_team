@@ -342,10 +342,17 @@
     }
 }
 
+
 .top-bar {
+
     &_profile {
         width: calc(100% - 35px);
         padding-left: 13px;
+
+
+        @include media('<882px') {
+            display: none;
+        }
 
         .profile {
             font-size: 14px;
@@ -365,6 +372,10 @@
                 color: $green;
             }
         }
+    }
+
+    &-opener {
+        display: none;
     }
 }
 

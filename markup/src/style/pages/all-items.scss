@@ -40,12 +40,12 @@
   width: 300px;
 
   @include media('<1024px') {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     background-color: #f4f6f5;
     overflow: hidden;
-    height: 100vh;
+    height: 106vh;
     box-shadow: 0 1px 10px rgba(100, 100, 100, 0.75);
     z-index: 10;
     padding: 25px 15px;
@@ -82,7 +82,7 @@
   &-opener {
     display: none;
     position: fixed;
-    top: 130px;
+    top: 393px;
     left: 0;
     background-color: rgba(245, 243, 243, .25);
     outline: none;
@@ -94,6 +94,30 @@
 
     @include media ('<1024px') {
       display: block;
+
+      .active-aside & {
+        display: none;
+      }
+    }
+
+    @include media ('<769px') {
+      top: 385px;
+    }
+
+    @include media ('<661px') {
+      top: 355px;
+    }
+
+    @include media ('<641px') {
+      top: 340px;
+    }
+
+    @include media ('<484px') {
+      top: 307px;
+    }
+
+    @include media ('<331px') {
+      top: 301px;
     }
 
   }
@@ -267,8 +291,8 @@
         line-height: 1;
         font-family: "Font Awesome 5 Free", sans-serif;
         font-weight: 900;
-        right: 8px;
-        top: 7px;
+        right: 7px;
+        top: 5px;
         pointer-events: none;
         color: #707070;
       }
@@ -282,6 +306,10 @@
 
       @include media('<=768px') {
         display: none;
+      }
+
+      .active {
+        color: $green;
       }
     }
 
@@ -527,5 +555,144 @@
         opacity: .7;
       }
     }
+  }
+}
+
+.top-bar {
+  @include animate(opacity visibility transform);
+
+  @include media('<1024px') {
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    height: 10.1vh;
+    box-shadow: 0 1px 10px rgba(100, 100, 100, 0.75);
+    z-index: 10;
+    padding: 25px 15px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-100%);
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .active-top-bar & {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    z-index: 100;
+
+    &-opener {
+
+      @include media('<363px') {
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+      }
+
+      margin-right: 25px;
+      width: 25px;
+      height: 25px;
+      border-radius: 2px;
+
+      i {
+        color: #fff;
+        font-size: 18px;
+      }
+    }
+  }
+
+  &-opener {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: #b5b5b5;
+
+    i {
+      color: black;
+    }
+
+
+    @include media('<1024px') {
+      display: block;
+    }
+
+  }
+
+  .help {
+    @include media('<727px') {
+      display: none;
+    }
+  }
+
+  &_profile {
+    .profile-name {
+      @include media('<682px') {
+        display: none;
+      }
+    }
+
+    .profile-balance {
+      @include media('<682px') {
+        display: none;
+      }
+    }
+  }
+}
+
+.btn-icon {
+  @include media('<682px') {
+    width: 35px;
+    height: 35px;
+  }
+
+  @include media('<375px') {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.ad-bell {
+  @include media('<560px') {
+    right: -145px;
+    top: 50px;
+  }
+
+  @include media('<401px') {
+    right: -208px;
+    top: 47px;
+  }
+}
+
+.ad-mail {
+  @include media('<560px') {
+    right: -99px;
+    top: 50px;
+  }
+
+  @include media('<401px') {
+    right: -162px;
+    top: 47px;
+  }
+}
+
+.ad-cart {
+  @include media('<560px') {
+    right: -53px;
+    top: 50px;
+  }
+
+  @include media('<401px') {
+    right: -116px;
+    top: 47px;
+  }
+}
+
+.visual-section {
+  @include media('<1024px') {
+    padding: 40px 0 17px;
   }
 }

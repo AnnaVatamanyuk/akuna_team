@@ -175,7 +175,8 @@
 
 label:not(.content-none) {
 
-        width: 160px;
+        width: 147px;
+        margin-right: 29px;
 
     &::after {
         position: absolute;
@@ -196,12 +197,35 @@ label:not(.content-none) {
 
     }
 
+    &.select-place {
+
+        @include media ('<=550px') {
+            width: 445px;
+        }
+
+        @include media ('<=425px') {
+            width: 325px;
+        }
+    }
+
 }
 
 
 .field-label_text_icon {
     display: flex;
     flex-grow: 1;
+    appearance: none;
+    color:#707070;
+
+    i {
+        position: absolute;
+        top: 14px;
+        right: 18px;
+        transform: translateX(-50%);
+        width: 9px;
+        height: 6px;
+        color: #444444;
+    }
 }
 
 
@@ -232,15 +256,18 @@ label:not(.content-none) {
     @include media('<1100px') {
         margin: 0 20px;
     }
-
 }
 
 .field {
 
     display: flex;
     flex-grow: 1;
-
     font-size: 15px;
+
+    .field-label-place-big {
+        padding-top: 13px;
+        height: 148px;
+    }
 
     & + & {
       margin-top: 24px;
@@ -251,16 +278,7 @@ label:not(.content-none) {
             margin-top: 50px;
         }
     }
-
-
 }
-
-.field-label-place-big {
-    padding-top: 13px;
-    height: 148px;
-}
-
-
 
 .text-main {
     font-family: $rob_medium;
@@ -268,41 +286,25 @@ label:not(.content-none) {
     font-size: 24px;
     border-bottom: 1px solid #dcdcdc;
     margin-bottom: 44px;
+
+    &_bottom {
+        font-size: 24px;
+        border-bottom: 1px solid #dcdcdc;
+        font-family: $rob_medium;
+        padding: 71px 33px 18px 33px;
+        margin-bottom: 44px;
+    }
 }
 
-.text-main_bottom {
-    font-size: 24px;
-    border-bottom: 1px solid #dcdcdc;
-    font-family: $rob_medium;
-    padding: 71px 33px 18px 33px;
-    margin-bottom: 44px;
-}
-
-input, textarea {
+input, textarea, select {
     background-color: #f9f9f9;
     outline: none;
     border: 1px solid #dcdcdc;
     height: 38px;
     flex-grow: 1;
     padding-left: 18px;
-
-
-}
-
-
-textarea {
     resize: none;
-}
 
-.field-label_text_icon i {
-    position: absolute;
-    top: 14px;
-    right: px;
-    right: 18px;
-    transform: translateX(-50%);
-    width: 9px;
-    height: 6px;
-    color: #444444;
 }
 
 .inputfile {
@@ -313,15 +315,16 @@ textarea {
 	position: absolute;
     z-index: -1;
 
+    & + label {
+        display: inline-block;
+        border: 1px solid #dcdcdc;
+        padding: 7px 14px;
+        font-size: 12px;
+        background-color: #fff;
+    }
 }
 
-.inputfile + label {
-    display: inline-block;
-    border: 1px solid #dcdcdc;
-    padding: 7px 14px;
-    font-size: 12px;
-    background-color: #fff;
-}
+
 
 .field-file {
     padding: 7px;

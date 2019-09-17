@@ -82,6 +82,9 @@ button {
     border: none;
     cursor: pointer;
 }
+address{
+    font-style: normal;
+}
 
 .row {
     margin: 0 -15px;
@@ -110,11 +113,6 @@ button {
         @include media('<=700px'){
             width: 100%;
         }
-    }
-
-    &-3+ {
-        padding: 0 15px;
-        width: calc(100%/3 + 40px);
     }
 
     &-3{
@@ -158,6 +156,10 @@ button {
     justify-content: space-between;
 }
 
+.jc-sa{
+    justify-content: space-around;
+}
+
 .jc-fs{
     justify-content: flex-start;
 }
@@ -182,6 +184,10 @@ button {
     align-items: baseline;
 }
 
+.pos-r {
+    position: relative;
+}
+
 .text-center{
     text-align: center;
 }
@@ -194,6 +200,52 @@ button {
 
     &-fluid{
         max-width: 100%;
+    }
+}
+
+.breadcrumbs{
+    &-holder{
+        font-size: $default-font;
+        width: 100%;
+        padding: 40px 15px;
+    }
+
+    &-nav{
+        &_list{
+            margin:  0 -10px;
+
+            li{
+                position: relative;
+                padding: 0 10px;
+
+                a {
+                    color: #b0bec5;
+                }
+
+                a:hover{
+                    color: #78909c;
+                }
+
+                span {
+                    color: $dark-grey;
+                }
+
+                &:last-child{
+                    &:after{
+                        display: none;
+                    }
+                }
+
+                &:after{
+                    position: absolute;
+                    content: '-';
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: -4px;
+                    color: $green;
+                }
+            }
+        }
     }
 }
 
@@ -212,7 +264,7 @@ button {
         background-color: $white;
         border: none;
         font-size: $f-size-base;
-        padding: 20px 43px;;
+        padding: 20px 43px;
         width: 140px;
         text-align: center;
         margin: 10px 10px 10px 0;

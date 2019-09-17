@@ -1,25 +1,18 @@
 //= ../pages-head/home-head.html
+    <link rel="stylesheet" href="../../style/pages/upload-products.min.css">
+    <script src="../../js/pages/home.min.js"></script>
+</head>
 <body>
     <div class="wrapper">
         //= ../block/header.html
         <main class="main">
-                <section class="visual-section all-items_section bg-block d-f ai-c jc-c" style="background-image:url(../../images/banner.png)">
-                    <div class="container d-f jc-c fw-w">
-                        <p class="text-center items-text">Premium WordPress Themes, Web Templates and Many More ...</p>
-                        <form action="#" class="items-form">
-                            <div class="input-holder ">
-                                <input type="text" placeholder="Search Your Keywords...">
-                                <img src="../../img/loupe.png" alt="image description">
-                            </div>
-                        </form>
-                    </div>
-                </section>
+            //= ../block/banner.html
             <section class="upload-item">
                 <div class="container">
                     <div class="row d-f fw-w">
                         <div class="breadcrumbs-holder">
                             <ul class="breadcrumbs-nav_list d-f">
-                                <li><a  href="#">Home</a></li>
+                                <li><a  href="../pages/home.html">Home</a></li>
                                 <li><span>Product Page</span></li>
                             </ul>
                         </div>
@@ -32,7 +25,7 @@
                                     <label class=" select-place field-label_text" for="Select Categories">Select Categories</label>
                                     <div class="field-label_text_icon p-r">
                                         <i class="fas fa-caret-down"></i>
-                                        <select class="field-label_text_icon i" name="Select" id="Select Categories">
+                                        <select class="select-place field-label_text_icon i" name="Select" id="Select Categories">
                                             <option value="Select">Select</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
@@ -40,34 +33,34 @@
                                     </div>
                                 </div>
                                 <div class="field d-f fw-w jc-sb ai-b">
-                                    <label class="field-label_text" for="Product-Name">Product-Name</label>
-                                    <input class= "field-label-place" type="text" placeholder="Enter your product name here..." id="Product-Name">
+                                    <label class="field-label_text" for="Product Name">Product-Name</label>
+                                    <input class= "field-label-place" type="text" placeholder="Enter your product name here..." id="Product Name">
                                 </div>
                                 <div class="field d-f fw-w jc-sb ai-b">
                                     <label class="field-label_text-big" for="Product Description">Product-Description</label>
                                     <textarea class= "field-label-place-big" type="text" placeholder="<h1> Type your text  here </h1/>" id="Product Description"></textarea>
                                 </div>
                                 <div class="field d-f fw-w jc-sb ai-b">
-                                    <label class="field-label_text" for="Upload Screenshots">Upload Main File</label>
+                                    <label class="field-label_text" for="Upload Main File">Upload Main File</label>
                                     <div class="field-file">
-                                        <input type="file" name="file" id="file" class="inputfile">
-                                        <label class="content-none" for="file">Choose a file</label>
+                                        <input type="file" name="file" id="Upload Main File" class="inputfile">
+                                        <label class="content-none" for="Upload Main File">Choose a file</label>
                                         <span class="field-file_span">No File Choosen</span>
                                     </div>
                                 </div>
                                 <div class="field d-f fw-w jc-sb ai-b">
                                     <label class="field-label_text" for="Upload Screenshots">Upload Screenshots</label>
                                     <div class="field-file">
-                                        <input type="file" name="file" id="file" class="inputfile">
-                                        <label class="content-none" for="file">Choose a file</label>
+                                        <input type="file" name="file" id="Upload Screenshots" class="inputfile">
+                                        <label class="content-none" for="Upload Screenshots">Choose a file</label>
                                         <span class="field-file_span">No File Choosen</span>
-                                    </div> 
+                                    </div>
                                 </div>
                                 <div class="field d-f fw-w jc-sb ai-b">
                                     <label class="select-place field-label_text" for="File Included">File Included</label>
                                     <div class="field-label_text_icon p-r">
                                         <i class="fas fa-caret-down"></i>
-                                        <select class="field-label_text_icon i" name="Select" id="Select Categories">
+                                        <select class="field-label_text_icon i" name="Select" id="File Included">
                                             <option value="Select File Type">Select File Type</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
@@ -76,20 +69,20 @@
                                 </div>
                                 <div class="field d-f fw-w jc-sb ai-b">
                                     <label class="field-label_text" for="File Dimensions">File Dimensions</label>
-                                    <input class= "field-label-place" type="text" placeholder="Enter the item  dimentionss here ..." id="File Dimensions"> 
+                                    <input class= "field-label-place" type="text" placeholder="Enter the item  dimentionss here ..." id="File Dimensions">
                                 </div>
                                 <div class="field d-f fw-w jc-sb ai-b">
                                     <label class="field-label_text" for="Item Tags">Item Tags</label>
-                                    <input class= "field-label-place" type="text" placeholder="Enter Tag Here" id="Item Tags"> 
+                                    <input class= "field-label-place" type="text" placeholder="Enter Tag Here" id="Item Tags">
                                 </div>
-                            </div>    
+                            </div>
                             <div class="text-main_bottom">
                                 <h1>Set Your Price (US$)</h1>
                             </div>
                             <div class="container-form p-r">
                                 <div class="field d-f fw-w jc-sb ai-b">
                                     <label class="field-label_text" for="Regular License">Regular License</label>
-                                    <input class= "field-label-place" type="text" placeholder="$00.00" id="Regular License"> 
+                                    <input class= "field-label-place" type="text" placeholder="$00.00" id="Regular License">
                                 </div>
                                 <div class="field d-f fw-w jc-sb ai-b">
                                     <label class="field-label_text" for="Extended License">Extended License</label>
@@ -106,8 +99,6 @@
         </main>
         //=../block/footer.html
     </div>
-        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="../../js/pages/home.min.js"></script>
 </body>
 </html>

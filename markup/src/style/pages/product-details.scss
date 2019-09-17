@@ -27,6 +27,52 @@
 }
 
 .top-bar {
+  @include animate(opacity visibility transform);
+
+  @include media('<1024px') {
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    height: 10.1vh;
+    box-shadow: 0 1px 10px rgba(100, 100, 100, 0.75);
+    z-index: 10;
+    padding: 25px 15px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-100%);
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .active-top-bar & {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    z-index: 100;
+
+    &-opener {
+
+      @include media('<363px') {
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+      }
+
+      margin-right: 25px;
+      width: 25px;
+      height: 25px;
+      border-radius: 2px;
+
+      i {
+        color: #fff;
+        font-size: 18px;
+      }
+    }
+  }
+
   &-opener {
     border-radius: 50%;
     width: 40px;

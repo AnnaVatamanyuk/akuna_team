@@ -84,11 +84,19 @@ li {
       height: 440px;
       margin-bottom: 40px;
       padding: 20px;
+
+      @include media('<=430px'){
+        height: 240px;
+        }
   
       .img {
         background-color: #d4d4d4;
         overflow: hidden;
         height: 400px;
+
+        @include media('<=430px'){
+          height: 200px;
+          }
       }
     }
 
@@ -208,6 +216,12 @@ li {
     .col-3 {
       padding: 0;
       margin: 15px;
+
+      li {
+        @include media('<=375px'){
+          font-size: 12px;
+        }
+      }
     }
 
     i {

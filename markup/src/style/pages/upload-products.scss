@@ -199,13 +199,16 @@ label:not(.content-none) {
 
     &.select-place {
 
-        @include media ('<=550px') {
-            width: 445px;
+        @include media('<=550px') {
+            width: 420px;
+
         }
 
-        @include media ('<=425px') {
-            width: 325px;
+        @include media('<=425px') {
+            width: 295px;
+
         }
+
     }
 
 }
@@ -214,8 +217,6 @@ label:not(.content-none) {
 .field-label_text_icon {
     display: flex;
     flex-grow: 1;
-    appearance: none;
-    color:#707070;
 
     i {
         position: absolute;
@@ -256,6 +257,7 @@ label:not(.content-none) {
     @include media('<1100px') {
         margin: 0 20px;
     }
+
 }
 
 .field {
@@ -263,11 +265,6 @@ label:not(.content-none) {
     display: flex;
     flex-grow: 1;
     font-size: 15px;
-
-    .field-label-place-big {
-        padding-top: 13px;
-        height: 148px;
-    }
 
     & + & {
       margin-top: 24px;
@@ -278,7 +275,30 @@ label:not(.content-none) {
             margin-top: 50px;
         }
     }
+
+    &-file {
+        padding: 7px;
+        border: 1px solid #dedede;
+        background-color: #f9f9f9;
+        display: flex;
+        flex-grow: 1;
+        align-items: baseline;
+
+            &_span {
+                margin-left: 14px;
+                font-size: 12px;
+                color: #707070;
+            }
+
+    }
+
+    &-label-place-big {
+        padding-top: 13px;
+        height: 148px;
+    }
+
 }
+
 
 .text-main {
     font-family: $rob_medium;
@@ -307,6 +327,12 @@ input, textarea, select {
 
 }
 
+select {
+    appearance: none;
+    color: #707070;
+}
+
+
 .inputfile {
 	width: 89px;
 	height: 26px;
@@ -322,23 +348,7 @@ input, textarea, select {
         font-size: 12px;
         background-color: #fff;
     }
-}
-
-
-
-.field-file {
-    padding: 7px;
-    border: 1px solid #dedede;
-    background-color: #f9f9f9;
-    display: flex;
-    flex-grow: 1;
-    align-items: baseline;
-
-        &_span {
-            margin-left: 14px;
-            font-size: 12px;
-            color: #707070;
-        }
 
 }
+
 

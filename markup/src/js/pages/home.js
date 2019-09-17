@@ -133,5 +133,15 @@ function dialogInit() {
   });
 }
 
+function profileOpen () {
+  $('.js-opener').on('click', function(){
+    if($(this).hasClass('active')){
+      $('.js-opener').removeClass('active');
+  } else {
+      $('.js-opener').removeClass('active');
+      $(this).addClass('active');
+  }
+  })
+}
 
 

@@ -7,6 +7,10 @@
 @import "../settings/slick.scss";
 @import "../settings/slick-theme.scss";
 
+.btn-icon_cart:before{
+  display: none;
+}
+
 .slider{
   &-section{
     background-color: $white;

@@ -426,6 +426,10 @@ li {
       margin: 0 1.5px;
       outline: none;
 
+      &:hover {
+        opacity: 0.75;
+      }
+
       i {
         font-weight: normal;
         color: #fff;
@@ -587,7 +591,6 @@ li {
     @include media ('<=1024px') {
       display: block;
     }
-
   }
 
   .active-aside & {
@@ -633,7 +636,7 @@ li {
       }
 
       span {
-        color: #90a4ae;;
+        color: #a5b6be;;
       }
     }
   }
@@ -648,16 +651,53 @@ li {
     }
 
     .aside-btn {
-      padding: 0 10px;
-      margin-left: 50px;
+      & ~ .button-active {
+        position: absolute;
+        margin-top: 25px;
+        margin-left: 58px;
+        background-color: #f4f6f5;
+        width: 150px;
+        height: 150px;
+        opacity: 0;
+        visibility: hidden;
+        color: #707070;
+        z-index: 10;
 
-      i {
-        color: $green;
-        padding-left: 12px;
-        padding-bottom: 3px;
+        a:hover {
+          color: $black;
+        }
+
+        p {
+          margin: 16px 0;
+
+          i {
+            color: $green;
+            padding: 0 12px;
+            padding-bottom: 3px;
+          }
+        }
+      }
+
+      &.active ~ .button-active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      &.active {
+          p {
+              color: black;
+          }
+      }
+        padding: 0 10px;
+        margin-left: 50px;
+
+        i {
+          color: $green;
+          padding-left: 12px;
+          padding-bottom: 3px;
+        }
       }
     }
-  }
 
   .buy-buttons {
       i {
